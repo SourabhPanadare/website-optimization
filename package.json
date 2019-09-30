@@ -1,0 +1,29 @@
+{
+  "name": "serverless-image-rendering",
+  "version": "0.0.0",
+  "description": "Server side image rendering using AWS Lamdba with Serverless",
+  "scripts": {
+    "serve": "serverless offline start",
+    "deploy": "serverless deploy",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "author": "andreasonny83@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "aws-sdk-mock": "^4.5.0",
+    "body-parser": "^1.19.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "serverless-offline": "^5.7.2",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.489.0",
+    "dotenv": "^8.0.0",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-apigwy-binary": "^1.0.0",
+    "sharp": "^0.22.1"
+  }
+}
