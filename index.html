@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&font-display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/plugins/bootstrap-4.0.0/css/bootstrap.min.css">
+    <link href="https://api.intripper.com/v15/websdk/intripperMap.css" rel="stylesheet" type="text/css" />
+    <title>Intripper Logo Optimization</title>
+    <style>
+      body,html{
+        margin:0;
+        padding:0;
+      }
+      #map-container{
+          height: calc(100vh - 90px);
+      }
+      #optimized-map-logo{
+        width:auto;
+        position: absolute;
+        top:30px;
+        right: 10px;
+        z-index: 99;
+        display: inline;
+      }
+      #optimized-map-logo img{
+        width:100% !important;
+        display:block;
+      }
+      #map-logo{
+        top:5px;
+      }
+      .logo-img{
+        position:absolute;
+        top:55px;
+        right:10px;
+        z-index: 99;
+        display: inline;
+      }
+      @media(max-width:992px){
+        .intripper-heading{
+          font-size:18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="text-capitalize mt-3 mb-0 pl-3 intripper-heading">Intripper Logo Optimization</h3>
+          </div>
+        </div>
+        <div class="row h-100">
+          <div class="col-lg-12">
+            <div id="map-container" class="my-3 mx-3 position-relative border rounded">
+              <div id="map" class="h-100"></div>
+              <a href="https://intripper.com/" target="_blank" id="optimized-map-logo">
+                <picture>
+                  <source
+                    media="(min-width: 992px)"
+                    srcset="imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=75,
+                            imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=112.5 1.5x,
+                            imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=150 2x">
+                  <source
+                    media="(min-width: 600px)"
+                    srcset="imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=65,
+                            imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=97.5 1.5x,
+                            imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=130 2x">
+                  <img
+                    src="imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=60"
+                    srcset="imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=90 1.5x,
+                            imageresize.php?img=https://api.intripper.com/mapasset/intripper.png&w=120 2x"
+                    alt="intripper logo">
+                </picture>
+              </a>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/plugins/cryptojs/crypto-aes.js"></script>
+    <script src="./assets/plugins/urlparser/URI.min.js"></script>
+    <script src="https://api.intripper.com/v15/websdk/intripperMapv1.0.js" type="text/javascript" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.29&key=AIzaSyDxqBNk_2AvTJxE8C1XPZqBAb7RrvaiJdk&callback=initMap&libraries=geometry" defer></script>
+    <script>
+      function initMap(){
+        var map = document.getElementById('map');
+        var queryString = 'U2FsdGVkX1/e5t2kPXXnqyUSGt0C404DowqTC+2Gg08=';
+        var cryptoKey = 'P@ssw0rd';
+        var mapid = CryptoJS.AES.decrypt(queryString,cryptoKey).toString(CryptoJS.enc.Utf8);
+        try {
+          if(mapid != null || mapid == ''){
+            objIntripperMap = new IntripperMap({
+              mapid: mapid,
+              authToken: '5D5BFAC8-CEE1-400D-84FC-A56C98334767',
+              map: map,
+              initialZoom: 20,
+              floorSelectorAppendTo: 'map-container',
+              isMapClickEnabled: false,
+              apiEnvironmentCode: 3, /*-----------------------------For Production------------------*/
+              mapReady: onMapReady
+            });
+            objIntripperMap.initMap();
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      function onMapReady(data) {
+        try{
+
+        }catch(error){
+          console.log(error);
+        }
+      }
+    </script>
+  </body>
+</html>
