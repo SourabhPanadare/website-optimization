@@ -1,7 +1,7 @@
-## Reference
+# Reference
    https://hackernoon.com/lets-start-with-webpack-4-91a0f1dba02e
 
-## Installation
+# Installation
    npm init
    npm install webpack webpack-cli -D
    npm i html-webpack-plugin -D
@@ -20,7 +20,7 @@
 
    npm start, npm run build:dev, npm run build:prod
 
-## Project Structure
+# Project Structure
    config:-
       webpack.common.config.js
       webpack.dev.config.js
@@ -38,14 +38,14 @@
    package.json
    webpack.config.json
 
-   # package.json:-
+   ## package.json:-
      "scripts": {
          "build:dev": "cross-env NODE_ENV=development webpack --mode development",
          "build:prod": "cross-env NODE_ENV=production webpack --mode production",
          "start": "webpack-dev-server --mode development",
       },
 
-   # Working with html:- (html-webpack-plugin)
+   ## Working with html:- (html-webpack-plugin)
      For Putting html file into dist folder
 
      webpack.common.config.js
@@ -65,13 +65,13 @@
       index.html
       <title> <%= htmlWebpackPlugin.options.title %> </title>
 
-    # Resolving Common Extensions:-
+   ## Resolving Common Extensions:-
       Sometimes we do not like to write extension while we import the modules(.ts or .js)
 
       webpack.common.config.js
       resolve: {extensions: ['.js', '.ts']}
 
-    # Transpile ES6+ to ES5:-(optional)
+   ## Transpile ES6+ to ES5:-(optional)
       Here we are saying that match all the files which ends with .js and exclude node_modules.
       Babel-loader will actually transpile these modules/files to ES 5 using preset-env.
 
@@ -107,7 +107,7 @@
       let firstHeading = header.getFirstHeading();
       console.log(firstHeading);
 
-    # Working with css and scss
+   ## Working with css and scss
       For loading the CSS styles we need two loaders css-loader and style-loader.
 
       webpack.common.config.js
@@ -132,7 +132,7 @@
       import '../src/style.css';
       import './styles/scss/main.scss';
 
-    # Loading Static Resources
+   ## Loading Static Resources
       For loading static content we need a loader called file-loader.
 
       webpack.common.config.js
@@ -167,7 +167,7 @@
       src/index.html
       <img id="webpack-gif" alt="webpack-gif">
 
-    # Prepare resource for production
+   ## Prepare resource for production
 
       webpack.prod.config.js
       const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
