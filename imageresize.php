@@ -1,4 +1,20 @@
 <?php
+
+  $now = time();
+  $generatedAt = gmdate('D, d M Y H:i:s T', $now);
+
+  // the last modified date (midnight on the same day of generation, as
+  // per your business-rule)
+  $lastModified = gmdate('D, d M Y 00:00:00 T', $now);
+
+  // date of expiry (24 hours after the last modified date, as per your
+  // business-rule)
+  $expiresAt = gmdate('D, d M Y H:i:s T', strtotime($lastModified) + 86400);
+
+  $maxAge = strtotime($expiresAt) - strtotime($generatedAt);
+  header('Last-modified: ' . $lastModified);
+  header('Cache-control: max-age=' . $maxAge);
+  
   if(!empty($_GET['img']) && !empty($_GET['w'])){
     $imagePath = $_GET['img'];
     $imageWidth = $_GET['w'];
