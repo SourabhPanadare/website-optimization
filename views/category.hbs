@@ -1,0 +1,79 @@
+{{#contentFor 'pageStyles'}}
+  <link href="/dist/plugin/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="/plugin/mCustomScrollbar/jquery.mCustomScrollbar.css"></noscript>
+  <link href="/dist/plugin/jquery-ui/jquery-ui.min.css" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="/plugin/jquery-ui/jquery-ui.min.css"></noscript>
+  <link href="/dist/css/category.min.css" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="/dist/css/category.min.css"></noscript>
+{{/contentFor}}
+<div class="loading">Loading&#8230;</div>
+<section id="receipeCategories" class="h-100">
+  <div class="container-fluid">
+    <!-- <div class="category-head pt-5 pb-5">
+      <h1 class="text-white text-center mb-0">Receipe Categories</h1>
+    </div> -->
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row pt-3">
+          <div class="col-lg-12">
+            <div id="custom-search-input" class="float-right mb-3 mr-4">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Search" />
+                    <span class="input-group-btn">
+                      <button class="btn btn-info btn-lg mt-1 border-0" type="button">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </span>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="categoryGridContainer" class="category-grid-container">
+          <div class="row">
+          {{#each filterdetails}}
+            <div class="col-lg-4">
+              <a class="card mb-4 text-white category-grid-card" href="/receipe/{{filterid}}">
+                  <picture>
+                       <source class="card-img-top" type="image/webp" data-srcset="http://sourabhportfolio.in/imageresize.php?img={{filterimage}}&w=512">
+                       <img src="http://sourabhportfolio.in/imageresize.php?img={{filterimage}}&w=10" data-src="http://sourabhportfolio.in/imageresize.php?img={{filterimage}}&w=512" alt="receipes" class="card-img-top lazy">
+                  </picture>
+                  <div class="overlay">
+                    <div class="text">{{filtername}}</div>
+                  </div>
+              </a>
+            </div>
+          {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="row pt-3">
+          <div class="col-lg-12">
+            <h3 class="text-white mt-2 mb-2">Categories</h3>
+          </div>
+        </div>
+        <div id="categoryContainer" class="category-container">
+          <div class="row mt-3">
+          {{#each categorydetails}}
+            <div class="col-lg-6">
+              <div class="card mb-3 text-white bg-dark category-card" data-name="{{categoryname}}">
+                <picture>
+                     <source class="card-img-top" type="image/webp" data-srcset="http://sourabhportfolio.in/imageresize.php?img={{categoryimage}}&w=512">
+                     <img src="http://sourabhportfolio.in/imageresize.php?img={{categoryimage}}&w=10" data-src="http://sourabhportfolio.in/imageresize.php?img={{categoryimage}}&w=512" alt="categories" class="card-img-top lazy">
+                </picture>
+                <div class="overlay">
+                  <div class="text">{{categoryname}}</div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{#contentFor 'pageScripts'}}
+  <script src="/dist/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js" defer></script>
+  <script src="/dist/plugin/jquery-ui/jquery-ui.min.js" defer></script>
+  <script src="/dist/plugin/lazyload/lazyload.min.js" defer></script>
+  <script src="/dist/js/category.min.js" defer></script>
+{{/contentFor}}

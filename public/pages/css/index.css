@@ -1,0 +1,165 @@
+/* ------------------------Gray Scale -----------------------------*/
+.home-category img {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.home-category:hover{
+  background:#dc3545!important;
+  color:#fff!important;
+}
+
+.home-category:hover img {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+  cursor:pointer;
+}
+/*----------------------------------------------------------------*/
+
+/*-------------------------------Zoom Effect----------------------*/
+#homeContent .media img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#homeContent .media img:hover{
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+/*----------------------------------------------------------------*/
+
+/*------------------------------------Banner Carousel---------------------------*/
+#homeBanner{
+  height:100vh;
+  overflow-y:hidden;
+	background-color: grey !important;
+}
+
+.carousel {
+    height: 100%;
+    width: 100%;
+}
+.carousel .carousel-inner {
+    height:100%;
+}
+.carousel .carousel-inner img {
+    display:block;
+    object-fit: fill;
+}
+
+#homeBanner .carousel-control-prev{
+  background: rgba(0,0,0,0.7);
+  opacity: 1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 30px;
+  cursor:pointer;
+  z-index:99;
+}
+
+#homeBanner .carousel-control-next{
+  background: rgba(0,0,0,0.7);
+  opacity: 1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 30px;
+  cursor:pointer;
+  z-index:99;
+}
+
+
+/*------------------------------------------------------------------------------*/
+#randomReceipe{
+  position:absolute;
+  top:0%;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.jumbotron-image{
+  position: relative;
+  padding-bottom: 56.2%;
+}
+
+.jumbotron-image img{
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#randomReceipe .jumbotron{
+  background:rgba(0,0,0,0.5);
+  box-shadow:0px 0px 20px 10px rgba(8, 8, 8, 0.9);
+}
+
+#randomReceipe .jumbtron-name a:hover{
+  text-decoration:none;
+  color:#0c5460 !important;
+}
+
+.no-webp #homeContent{
+  background:url('../../dist/images/bannerhome-large.jpeg');
+  background-size:cover;
+}
+
+.webp #homeContent{
+	background:url('../../dist/images/bannerhome-large.webp');
+  background-size:cover;
+}
+
+
+#homeContent .home-category .card-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#randomReceipe .jumbtron-name a:hover{
+	color:#dc3545!important;
+	text-decoration:none;
+}
+
+#homeContent .media h5:hover{
+	color:#dc3545!important;
+}
+
+#homeContent .media a{
+	text-decoration:none;
+}
+
+#homeContent .media-img{
+	width:100px;
+	overflow:hidden;
+}
+
+@media(max-width:991px){
+	.carousel-control-prev, .carousel-control-next{
+		display:none;
+	}
+	.carousel-item, .carousel-item img{
+		height:100%;
+	}
+	.carousel-item img{
+		width:150% !important;
+		left:-50%;
+	}
+	.category-scroll{
+		height:45vh;
+		overflow-y:auto;
+		padding:0 !important;
+	}
+	.webp #homeContent, .no-webp #homeContent{
+		background-position-x:-65%;
+	}
+}

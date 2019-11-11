@@ -1,0 +1,55 @@
+{{#contentFor 'pageStyles'}}
+  <link href="/dist/css/receipe.min.css" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="/dist/css/receipe.min.css"></noscript>
+{{/contentFor}}
+<div class="loading">Loading&#8230;</div>
+<section id="receipeDetails" class="h-100 d-flex align-items-center">
+  <div class="container-fluid">
+    {{#each meals}}
+    <div class="media pt-3 pb-3 my-3 mx-1 my-lg-0 mx-lg-3 row position-relative">
+      <a class="home-icon" href="/">
+        <i class="fa fa-home text-white" aria-hidden="true"></i>
+      </a>
+      <div class="col-lg-5 receipe-image position-relative mt-3 mt-lg-0">
+        <picture>
+             <source class="w-100" type="image/webp" srcset="http://sourabhportfolio.in/imageresize.php?img={{strMealThumb}}&w=700">
+             <img src="http://sourabhportfolio.in/imageresize.php?img={{strMealThumb}}&w=10" data-src="http://sourabhportfolio.in/imageresize.php?img={{strMealThumb}}&w=700" alt="receipe" class="w-100 lazyload">
+        </picture>
+        <div class="image-overlay">{{strMeal}}</div>
+      </div>
+      <!-- <img class="mr-3 img-fluid col-lg-5" src="{{strMealThumb}}" alt="receipe"> -->
+      <div class="media-body text-white position-relative p-3 p-lg-0">
+        <h3 class="mt-1 mt-lg-0 text-warning">{{strMeal}}</h3>
+        <p class="pr-3">{{strInstructions}}</p>
+        <h5 class="text-warning">Ingridients:-</h5>
+        <div class="receipe-ingridients row">
+          <div class="col-lg-4">{{strMeasure1}}<span class="ml-2">{{strIngredient1}}</span></div>
+          <div class="col-lg-4">{{strMeasure2}}<span class="ml-2">{{strIngredient2}}</span></div>
+          <div class="col-lg-4">{{strMeasure3}}<span class="ml-2">{{strIngredient3}}</span></div>
+          <div class="col-lg-4">{{strMeasure4}}<span class="ml-2">{{strIngredient4}}</span></div>
+          <div class="col-lg-4">{{strMeasure5}}<span class="ml-2">{{strIngredient5}}</span></div>
+          <div class="col-lg-4">{{strMeasure6}}<span class="ml-2">{{strIngredient6}}</span></div>
+          <div class="col-lg-4">{{strMeasure7}}<span class="ml-2">{{strIngredient7}}</span></div>
+          <div class="col-lg-4">{{strMeasure8}}<span class="ml-2">{{strIngredient8}}</span></div>
+          <div class="col-lg-4">{{strMeasure9}}<span class="ml-2">{{strIngredient9}}</span></div>
+          <div class="col-lg-4">{{strMeasure10}}<span class="ml-2">{{strIngredient10}}</span></div>
+          <div class="col-lg-4">{{strMeasure11}}<span class="ml-2">{{strIngredient11}}</span></div>
+          <div class="col-lg-4">{{strMeasure12}}<span class="ml-2">{{strIngredient12}}</span></div>
+          <div class="col-lg-4">{{strMeasure13}}<span class="ml-2">{{strIngredient13}}</span></div>
+          <div class="col-lg-4">{{strMeasure14}}<span class="ml-2">{{strIngredient14}}</span></div>
+          <div class="col-lg-4">{{strMeasure15}}<span class="ml-2">{{strIngredient15}}</span></div>
+          <div class="col-lg-4">{{strMeasure16}}<span class="ml-2">{{strIngredient16}}</span></div>
+          <div class="col-lg-4">{{strMeasure17}}<span class="ml-2">{{strIngredient17}}</span></div>
+          <div class="col-lg-4">{{strMeasure18}}<span class="ml-2">{{strIngredient18}}</span></div>
+          <div class="col-lg-4">{{strMeasure19}}<span class="ml-2">{{strIngredient19}}</span></div>
+          <div class="col-lg-4">{{strMeasure20}}<span class="ml-2">{{strIngredient20}}</span></div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
+
+{{#contentFor 'pageScripts'}}
+  <script src="/dist/plugin/lazysizes/lazysizes.min.js" defer></script>
+  <script src="/dist/js/receipe.min.js" defer></script>
+{{/contentFor}}
